@@ -18,6 +18,7 @@ Todo.init(
     todo_open: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: true,
     },
     goal_id: {
       type: DataTypes.INTEGER,

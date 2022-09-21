@@ -11,8 +11,16 @@ Goal.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    goal_name: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    goal_category: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    goal_open: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     user_id: {

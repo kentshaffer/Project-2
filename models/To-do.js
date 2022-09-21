@@ -11,9 +11,14 @@ Todo.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    todo_name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    todo_open: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
     },
     goal_id: {
       type: DataTypes.INTEGER,

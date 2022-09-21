@@ -34,7 +34,7 @@ const goalData = [
   {
     goal_name: 'Run a marathon',
     goal_category: 'fitness',
-    goal_open: '',
+    goal_open: true,
     user_id: 3,
   },
 ];

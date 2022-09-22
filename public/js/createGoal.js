@@ -79,6 +79,25 @@ const postTodo = async () => {
   }
 };
 
+// const postToDo1Table = async () => {
+//   let todo_list = [];
+//   for (var i = 2; i < goalsArray.length; i++) {
+//     todo_list.push(goalsArray[i]);
+//   }
+//   todo_list.toString();
+//   const response = await fetch('/api/todo', {
+//     method: 'POST',
+//     body: JSON.stringify({ todo_list }),
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   });
+//   if (!response.ok) {
+//     goalsArray = [];
+//     alert('Failed to create todos');
+//   }
+// };
+
 function submitGoal() {
   let allGoals = document.querySelectorAll('#goalText');
   // console.log(allGoals.length);

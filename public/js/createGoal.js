@@ -99,4 +99,4 @@ function submitGoal() {
   // document.location.replace('/dashboard');
 }
 
-console.log(addNewToDo(), deleteToDo(), submitGoal());
+console.log(addNewToDo, deleteToDo, submitGoal);

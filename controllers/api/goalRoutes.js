@@ -2,6 +2,32 @@ const router = require('express').Router();
 const { Goal } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
+// router.get('/', (req, res) => {
+//   Goal.findAll().then(goalData => {
+//     var goals = goalData.map(goal => goal.get({ plain: true}));
+//     console.log(goals);
+//     res.render('homepage', {
+//       goals,
+//       logged_in: true
+//       // req.session.logged_in
+//     });
+//   });
+// });
+
+
+// router.get('/:id', (req, res) => {
+//   Goal.findByPk(req.params.id).then(goalData => {
+//     var goals = goalData.get({ plain: true});
+//     console.log(goals);
+//     res.render('goal', {
+//       goals,
+//       logged_in: true
+//       // req.session.logged_in
+//     });
+//   });
+// });
+
+
 //Remember to re add the withAuth helper function to this after testing
 router.post('/', async (req, res) => {
   try {

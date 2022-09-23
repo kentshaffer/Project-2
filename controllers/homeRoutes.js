@@ -2,26 +2,52 @@ const router = require('express').Router();
 const { Goal, Todo } = require('../models');
 // const withAuth = require('../utils/auth');
 
-router.get('/goals/:goal_id', async (req, res) => {
-  try {
-    const goalData = await Goal.findByPk(req.params.goal_id, {
-      include: [
-        {
-          model: Todo,
-          attributes: ['todo_name'],
-        }
-      ]
+router.get('/', (req, res) => {
+  Goal.findAll().then(goalData => {
+    var goals = goalData.map(goal => goal.get({ plain: true}));
+    res.render('homepage', {
+      goals,
+      logged_in: true
+      // req.session.logged_in
     });
-    const goal = goalData.get({ plain: true });
-    //Need to make handlebar page and then put name below in render spot
-    res.render('single view handlebar name', {
-      ...goal,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  });
 });
+
+
+router.get('/:id', (req, res) => {
+  Goal.findByPk(req.params.id).then(goalData => {
+    var goals = goalData.get({ plain: true});
+    console.log(goals);
+    res.render('goal', {
+      goals,
+      logged_in: true
+      // req.session.logged_in
+    });
+  });
+});
+
+
+
+// router.get('/goals/:goal_id', async (req, res) => {
+//   try {
+//     const goalData = await Goal.findByPk(req.params.goal_id, {
+//       include: [
+//         {
+//           model: Todo,
+//           attributes: ['todo_name'],
+//         }
+//       ]
+//     });
+//     const goal = goalData.get({ plain: true });
+//     //Need to make handlebar page and then put name below in render spot
+//     res.render('single view handlebar name', {
+//       ...goal,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
 

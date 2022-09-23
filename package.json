@@ -20,6 +20,8 @@
   "homepage": "https://github.com/kentshaffer/Project-2#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "bootstrap": "^5.2.1",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.2",
     "eslint": "^8.23.1",

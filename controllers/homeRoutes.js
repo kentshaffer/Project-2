@@ -28,3 +28,9 @@ router.get('/goals/:goal_id', async (req, res) => {
 
 
 module.exports = router;
+
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
+module.exports = router;

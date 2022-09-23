@@ -63,6 +63,7 @@ const postGoal = async () => {
 };
 
 const postTodo = async () => {
+  //do get request of newly created goal to get goal id, then pass into
   for (var i = 2; i < goalsArray.length; i++) {
     let todo_name = goalsArray[i];
     const response = await fetch('/api/todo', {
@@ -84,10 +85,10 @@ const postTodo = async () => {
 //   for (var i = 2; i < goalsArray.length; i++) {
 //     todo_list.push(goalsArray[i]);
 //   }
-//   todo_list.toString();
+//   let todo_name = todo_list.toString();
 //   const response = await fetch('/api/todo', {
 //     method: 'POST',
-//     body: JSON.stringify({ todo_list }),
+//     body: JSON.stringify({ todo_name }),
 //     headers: {
 //       'Content-Type': 'application/json',
 //     },
@@ -109,12 +110,13 @@ function submitGoal() {
     }
     goalsArray.push(allGoals[i].value.trim());
   }
+  goalsArray;
   // console.log(goalsArray[i]);
   // for (var i = 2; i < goalsArray.length; i++) {
   //     console.log(goalsArray[i]);
   // }
-  postGoal;
-  postTodo;
+  postGoal(goalsArray);
+  postTodo(goalsArray);
   // document.location.replace('/dashboard');
 }
 

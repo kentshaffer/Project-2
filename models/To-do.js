@@ -26,6 +26,7 @@ Todo.init(
         model: 'goal',
         key: 'id',
       },
+      allowNull: false,
     },
   },
   {

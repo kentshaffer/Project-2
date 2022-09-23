@@ -1,3 +1,4 @@
+
 function maxTodo() {
   let parentDiv = document.querySelector('#newRow');
   if (parentDiv.childElementCount === 10) {
@@ -44,8 +45,8 @@ function ifEmpty() {
   warning.textContent = 'Please fill out all areas';
   emptyDiv.appendChild(warning);
 }
-
 let goalsArray = [];
+
 
 const postGoal = async () => {
   let goal_name = goalsArray[0];
@@ -63,12 +64,19 @@ const postGoal = async () => {
 };
 
 const postTodo = async () => {
-  //do get request of newly created goal to get goal id, then pass into
+  //do get request of newly created goal to get goal id, then pass into post request of todos for table linkage
+  const { Goal } = require('../../models');
+  const oneGoal = await Goal.findOne({
+    where: {
+      goal_name: goalsArray[0],
+    }
+  });
+  let assocGoalId = oneGoal.id;
   for (var i = 2; i < goalsArray.length; i++) {
     let todo_name = goalsArray[i];
     const response = await fetch('/api/todo', {
       method: 'POST',
-      body: JSON.stringify({ todo_name }),
+      body: JSON.stringify({ todo_name, assocGoalId }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -120,4 +128,14 @@ function submitGoal() {
   // document.location.replace('/dashboard');
 }
 
-console.log(addNewToDo, deleteToDo, submitGoal);
+// console.log(addNewToDo, deleteToDo, submitGoal);
+
+let newToDo = document.querySelector('#addNewToDo');
+newToDo.addEventListener('click', addNewToDo);
+
+let submit = document.querySelector('#createGoal');
+submit.addEventListener('click', submitGoal);
+
+
+let deleteTodo = document.querySelector('#deleteLastToDo');
+deleteTodo.addEventListener('click', deleteToDo);

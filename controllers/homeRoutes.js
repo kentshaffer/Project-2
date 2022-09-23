@@ -23,6 +23,10 @@ router.get('/goals/:goal_id', async (req, res) => {
   }
 });
 
+router.get('/createGoal', (req, res) => {
+  res.render('createGoal');
+});
+
 
 
 

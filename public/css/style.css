@@ -13,7 +13,7 @@ body {
 main {
   margin-top: 5%;
   margin-bottom: 5%;
-};
+}
 
 .inner-row {
   height: 100vh;
@@ -29,13 +29,14 @@ main {
 }
 
 .form-box {
-  background:transparent 40%;
+  background: transparent 40%;
   box-shadow: 0 0 20px 0 var(--secondary), 0 15px 15px 0 var(--light);
 }
 
 .registration-form {
   display: none;
 }
+
 .account {
   color: var(--secondary);
 }
@@ -49,4 +50,9 @@ main {
   font-size: large;
   padding: 1%;
   justify-content: center;
-};
+}
+
+.btn-custom {
+  max-width: fit-content;
+  background-color: var(--primary);
+}

@@ -10,37 +10,38 @@ $('.login-show').click(function () {
 
 $('#loginbtn').click(async function (event) {
   event.preventDefault();
-  const loginEmail = $('#loginEmail').val();
-  const loginPassword = $('#loginPassword').val();
+  const email = $('#loginEmail').val();
+  const password = $('#loginPassword').val();
 
-  if (loginEmail && loginPassword) {
-    const response = await fetch('', {
+  if (email && password) {
+    const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ loginEmail, loginPassword }),
+      body: JSON.stringify({ email, password }),
       headers: {
-        'Content-Type':
-        'application/json'
+        'Content-Type': 'application/json',
       },
     });
     if (response.ok) {
-    // If successful, redirect the browser to the profile page
+      // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
-      alert(response.statusText);
+
+      const result = await response.json();
+      alert(result.message);
+      // alert(response.statusText);
     }
   }
 });
 
-$('#signupbtn2').click(async function(event){
-
+$('#signupbtn2').click(async function (event) {
   event.preventDefault();
-  const firstName =$('#firstName').val();
-  const lastName =$('#lastName').val();
-  const email =$('#signUpEmail').val();
-  const password =$('#signUpPassword').val();
+  const firstName = $('#firstName').val();
+  const lastName = $('#lastName').val();
+  const email = $('#signUpEmail').val();
+  const password = $('#signUpPassword').val();
 
   if (firstName && lastName && email && password) {
-    const name = firstName+' '+lastName;
+    const name = firstName + ' ' + lastName;
     const response = await fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),

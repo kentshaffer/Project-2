@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { Goal, Todo } = require('../models');
 // const withAuth = require('../utils/auth');
 
+router.get('/', async (req, res) => {
+  res.render('homepage', { logged_in: req.session.logged_in });
+});
+
 router.get('/goals/:goal_id', async (req, res) => {
   try {
     const goalData = await Goal.findByPk(req.params.goal_id, {
@@ -9,8 +13,8 @@ router.get('/goals/:goal_id', async (req, res) => {
         {
           model: Todo,
           attributes: ['todo_name'],
-        }
-      ]
+        },
+      ],
     });
     const goal = goalData.get({ plain: true });
     //Need to make handlebar page and then put name below in render spot
@@ -22,12 +26,6 @@ router.get('/goals/:goal_id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-
-
-
-module.exports = router;
 
 router.get('/login', (req, res) => {
   res.render('login');

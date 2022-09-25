@@ -53,5 +53,4 @@ $('#signupbtn2').click(async function (event) {
       alert(response.statusText);
     }
   }
-  
 });

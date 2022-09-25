@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { Todo } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newtodo = await Todo.create({
       ...req.body,
-      user_id: req.session.user_id,
+      // user_id: req.session.user_id,
     });
 
     res.status(200).json(newtodo);

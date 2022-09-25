@@ -1,0 +1,62 @@
+:root {
+  --primary: rgba(0, 40, 85, 1);
+  --secondary: rgb(238, 230, 230);
+  --dark: rgba(0, 0, 0, 0.1);
+  --light: rgba(0, 0, 0, 0.33);
+}
+
+
+.account{
+  color: lightgrey;
+}
+.login{
+  color:lightgrey;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-image: url("https://mail.google.com/mail/u/0?ui=2&ik=e21186726f&attid=0.1&permmsgid=msg-a:r7186866255263133694&th=183679ae00c431c3&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ9RWRo7qAnk5Bdgj9tMb_5lZGd9vAYGkfVKUjKmR0MMYzc7ve6qbd-CLet1gQ2crqdkYnwP5hSWSDmRVTdylpmYjsdQabp7gEwZdLOnC60vTYin_TB_mxeAY-o&disp=emb&realattid=183679ad28d85f51b481");
+}
+
+main {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.inner-row {
+  height: 100vh;
+}
+
+.primaryBg {
+  background: var(--primary);
+
+}
+
+.primaryColor {
+  color: red;
+}
+
+.form-box {
+  background: transparent 40%;
+  box-shadow: 0 0 20px 0 var(--secondary), 0 15px 15px 0 var(--light);
+}
+
+.registration-form {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-weight: 500;
+  font-size: large;
+  padding: 1%;
+  justify-content: center;
+}
+
+.btn-custom {
+  max-width: fit-content;
+  background-color: var(--primary);
+}

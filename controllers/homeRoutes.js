@@ -13,44 +13,38 @@ router.get('/', (req, res) => {
   });
 });
 
+// single goal GET route
+router.get('/:id', async (req, res) => {
 
-router.get('/:id', (req, res) => {
-  Goal.findByPk(req.params.id).then(goalData => {
-    var goals = goalData.get({ plain: true});
-    console.log(goals);
-    res.render('goal', {
-      goals,
-      logged_in: true
-      // req.session.logged_in
+  try {
+    const goalData = await Goal.findByPk(req.params.id, {
+      include: [
+        {
+          model: Todo,
+
+          attributes: ['id', 'todo_name', 'todo_open', 'goal_id'],
+
+        },
+      ],
     });
-  });
+    const goal = goalData.get({ plain: true });
+    //Need to make handlebar page and then put name below in render spot - DONE
+    res.render('single-goal', {
+      ...goal,
+      // logged_in: req.session.logged_in,
+    });
+    // res.status(200).json(goalData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
+router.get('/createGoal', (req, res) => {
+  res.render('createGoal');
+});
 
-
-// router.get('/goals/:goal_id', async (req, res) => {
-//   try {
-//     const goalData = await Goal.findByPk(req.params.goal_id, {
-//       include: [
-//         {
-//           model: Todo,
-//           attributes: ['todo_name'],
-//         }
-//       ]
-//     });
-//     const goal = goalData.get({ plain: true });
-//     //Need to make handlebar page and then put name below in render spot
-//     res.render('single view handlebar name', {
-//       ...goal,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-
-
-
+router.get('/login', (req, res) => {
+  res.render('login');
+});
 
 module.exports = router;

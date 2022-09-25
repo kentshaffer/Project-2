@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,17 +35,20 @@
             <h1 class='text-white h1'>[GOOOL!]</h1>
             <span class='text-muted'>We'll help you get there</span>
           </div>
-          <button
-            class='navbar-toggler'
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target='#navbarToggleExternalContent'
-            aria-controls='navbarToggleExternalContent'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-          >
-            <span class='navbar-toggler-icon'></span>
-          </button>
+
+          {{#if logged_in}}
+            <button id='log-out'>log out</button>
+          {{else}}
+            <a href='/login'>
+              <button>log in</button>
+            </a>
+          {{/if}}
+          {{! <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> }}
+
         </div>
       </nav>
     </header>

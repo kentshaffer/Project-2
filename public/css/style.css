@@ -5,12 +5,12 @@
   --light: rgba(0, 0, 0, 0.33);
 }
 
-
-.account{
+.account {
   color: lightgrey;
 }
-.login{
-  color:lightgrey;
+
+.login {
+  color: lightgrey;
 }
 
 body {

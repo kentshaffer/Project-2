@@ -18,29 +18,32 @@
     <header>
       <div class='collapse' id='navbarToggleExternalContent'>
         <div class='bg-dark p-4 custom-nav'>
-          <div><a href='/homepage' class='text-white h4'>Dashboard</a></div>
-          <div><a href='/login' class='text-white h4'>Logout</a></div>
-        </div>
-      </div>
-      <nav class='navbar navbar-dark bg-dark custom-header'>
-        <div class='container-fluid'>
-          <div><a href='/'>
-              <h1 class='text-white h1'>[GOOOL!]</h1>
-              <span class='text-muted'>We'll help you get there</span>
-            </a></div>
-
-          {{#if logged_in}}
+        <div><a href="/" class="text-white h4">Dashboard</a></div>
+          <div><a href='/creategoal' class='text-white h4'>Create New Goal</a></div>
+          <div>
+          {{!-- <a href='/login' class='text-white h4'>Logout</a> --}}
+            {{#if logged_in}}
             <button id='log-out'>log out</button>
           {{else}}
             <a href='/login'>
               <button>log in</button>
             </a>
           {{/if}}
-          {{! <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        </div>
+        </div>
+      </div>
+      <nav class='navbar navbar-dark bg-dark custom-header'>
+        <div class='container-fluid'>
+          <div>
+              <h1 class='text-white h1'>[GOOOL!]</h1>
+              <span class='text-muted'>We'll help you get there</span>
+            </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button> }}
+        </button>
 
         </div>
       </nav>
@@ -68,6 +71,8 @@
     {{#if logged_in}}
       <script src='/js/logout.js'></script>
     {{/if}}
+
+
 
   </body>
 

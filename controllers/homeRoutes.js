@@ -2,12 +2,20 @@ const router = require('express').Router();
 const { Goal, Todo } = require('../models');
 // const withAuth = require('../utils/auth');
 
+router.get('/login', (req, res) => {
+  try {
+    res.render('login');
+  } catch (error) {
+    res.status(500).json('hello');
+  }
+});
+
 router.get('/', (req, res) => {
-  Goal.findAll().then(goalData => {
-    var goals = goalData.map(goal => goal.get({ plain: true}));
+  Goal.findAll().then((goalData) => {
+    var goals = goalData.map((goal) => goal.get({ plain: true }));
     res.render('homepage', {
       goals,
-      logged_in: true
+      logged_in: true,
       // req.session.logged_in
     });
   });
@@ -15,7 +23,6 @@ router.get('/', (req, res) => {
 
 // single goal GET route
 router.get('/:id', async (req, res) => {
-
   try {
     const goalData = await Goal.findByPk(req.params.id, {
       include: [
@@ -23,7 +30,6 @@ router.get('/:id', async (req, res) => {
           model: Todo,
 
           attributes: ['id', 'todo_name', 'todo_open', 'goal_id'],
-
         },
       ],
     });
@@ -39,12 +45,9 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+
 router.get('/createGoal', (req, res) => {
   res.render('createGoal');
-});
-
-router.get('/login', (req, res) => {
-  res.render('login');
 });
 
 module.exports = router;

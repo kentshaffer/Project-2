@@ -30,7 +30,7 @@ Goal.init(
     },
     date_completed: {
       type: DataTypes.DATEONLY,
-      defaultValue: DataTypes.NOW,
+      // defaultValue: DataTypes.NOW,
       allowNull: true,
     },
     user_id: {

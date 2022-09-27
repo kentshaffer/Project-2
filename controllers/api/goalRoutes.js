@@ -32,4 +32,9 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.put('/:id', (req, res) => {
+  // update a category by its `id` value
+  Goal.update(req.body, {where: {id: req.params.id}}).then(goalData => res.json(goalData)).catch(err => res.json(err));
+});
+
 module.exports = router;

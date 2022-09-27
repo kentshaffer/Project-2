@@ -7,8 +7,11 @@
       <div>{{#unless todo_open}}✔️{{/unless}}</div>
       {{#if todo_open}}<input
           class='btn btn-primary btn-custom'
+          id='complete-todo-btn'
           type='submit'
           value='Complete'
         />{{/if}}</div>
   </div>
 </section>
+
+<script src="js/complete-todo.js"></script>

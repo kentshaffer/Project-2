@@ -1,15 +1,13 @@
 <div class='container container-fluid'>
   <div class='flex-row justify-center'>
     <section class='card'>
-        <div class='card-body'>
-            <div 
-                class='d-grid gap-2 d-md-flex justify-content-between'
-                id='goal-{{id}}'>
-                    <h2>{{goal_name}} </h2>
-                    <div>{{#unless goal_open}}✔️{{/unless}}</div>
-                    {{#if goal_open}}<input class='btn btn-primary btn-custom' type='submit' value='Complete' />{{/if}}
+      <div class='card-body'>
+        <div class='d-grid gap-2 d-md-flex justify-content-between' id='goal-{{id}}'>
+          <h2>{{goal_name}} </h2>
+          <div>{{#unless goal_open}}✔️{{/unless}}</div>
+          {{#if goal_open}}<input class='btn btn-primary btn-custom' type='submit' value='Complete' />{{/if}}
         </div>
-        </div>
+      </div>
     </section>
     {{#each todos as |todo|}}
     {{> todos}}

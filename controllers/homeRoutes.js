@@ -3,8 +3,12 @@ const { Goal, Todo } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/login', (req, res) => {
+  res.render('login');
+});
+
+router.get('/createGoal', (req, res) => {
   try {
-    res.render('login');
+    res.render('createGoal');
   } catch (error) {
     res.status(500).json('hello');
   }
@@ -28,7 +32,6 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: Todo,
-
           attributes: ['id', 'todo_name', 'todo_open', 'goal_id'],
         },
       ],
@@ -44,10 +47,4 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-router.get('/createGoal', (req, res) => {
-  res.render('createGoal');
-});
-
 module.exports = router;

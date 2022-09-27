@@ -2,11 +2,11 @@
   <div class='card-body'>
     <div
       class='d-grid gap-2 d-md-flex justify-content-between'
-      id='todo-{{id}}'
+      id='{{id}}'
     >{{todo_name}}
       <div>{{#unless todo_open}}✔️{{/unless}}</div>
       {{#if todo_open}}<input
-          class='btn btn-primary btn-custom'
+          class='btn btn-primary btn-custom complete-todo-btn'
           type='submit'
           value='Complete'
         />{{/if}}</div>

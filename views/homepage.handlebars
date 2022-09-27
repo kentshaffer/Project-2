@@ -1,31 +1,17 @@
-{{!-- <div>
+<div class='container container-fluid'>
+  <div class='flex-row justify-center'>
   <h1>Home Page</h1>
-{{#each goals as |goal|}}
-<a href="{{goal.id}}">
-<div class="card">
-  <div class="card-body">
-    <div class="card-header">
-      <h3 class="card-title">{{goal.goal_name}}</h3>
-    </div>
-  </div>
-</div>
-</a>
-
-{{/each}}
-</div> --}}
-
-<div>
-  <h1>Home Page</h1>
-{{#each goals as |goal|}}
-<a href="{{goal.id}}">
-<div class="card">
-  <div class="card-body">
-    <div class="card-header">
-      <h3 class="card-title">{{goal.goal_name}}</h3>
-    </div>
-  </div>
-</div>
-</a>
-
-{{/each}}
+  {{#each goals as |goal|}}
+    <a href='{{goal.id}}'>
+      <div class='card'>
+        <div class='card-body'>
+          <div
+            class='card-header d-grid gap-2 d-md-flex justify-content-between'
+          >
+            <h3 class='card-title'>{{goal.goal_name}}</h3>
+          </div>
+        </div>
+      </div>
+    </a>
+  {{/each}}
 </div>

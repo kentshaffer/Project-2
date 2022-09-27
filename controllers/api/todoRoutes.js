@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/user/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   // update a category by its `id` value
   Todo.update(req.body, {where: {id: req.params.id}}).then(todoData => res.json(todoData)).catch(err => res.json(err));
 });

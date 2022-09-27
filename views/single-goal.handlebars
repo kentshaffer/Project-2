@@ -1,6 +1,9 @@
 <div class='container container-fluid'>
   <div class='flex-row justify-center'>
+      <div class="justify-content-center">
         <div class="justify-center">{{>progress-bar}}</div>
+        <h4 class="col" style="margin: 5px;">Days passed since goal creation: {{diffDate date_created}}</h4>
+      </div>
     <section class='card'>
       <div class='card-body'>
         <div class='d-grid gap-2 d-md-flex justify-content-between' id='{{id}}'>
@@ -17,11 +20,11 @@
     
   </div>
     <div class="row">
-      <button id="addTd" type="button" class="btn btn-primary col-3">Add to-do</button>
-      <button id="updateTodo" type="button" class="btn btn-primary col-3">Submit</button>
-
+      <button id="addTd" type="button" class="btn btn-primary col-3" style="margin: 5px;">Add to-do</button>
+      <button id="updateTodo" type="button" class="btn btn-primary col-3" style="margin: 5px;">Submit</button>
     </div>
-
+    <div class="row">
+    </div>
   </div>
 </div>
 <script src="js/addTodo.js"></script>

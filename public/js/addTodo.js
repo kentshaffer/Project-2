@@ -9,7 +9,7 @@ function addNewtodo() {
   const textArea = document.createElement('input');
   textArea.setAttribute(
     'class',
-    'd-grid gap-2 d-md-flex justify-content-between'
+    'form-control'
   );
   textArea.setAttribute('id', 'textId');
   cardBody.appendChild(textArea);

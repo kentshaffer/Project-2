@@ -22,10 +22,9 @@ $('#loginbtn').click(async function (event) {
       },
     });
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      // If successful, redirect the browser to the homepage
+      document.location.replace('/');
     } else {
-
       const result = await response.json();
       alert(result.message);
       // alert(response.statusText);

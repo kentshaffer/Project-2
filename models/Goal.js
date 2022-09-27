@@ -28,6 +28,11 @@ Goal.init(
       type: DataTypes.DATEONLY,
       defaultValue: DataTypes.NOW,
     },
+    date_completed: {
+      type: DataTypes.DATEONLY,
+      defaultValue: DataTypes.NOW,
+      allowNull: true,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

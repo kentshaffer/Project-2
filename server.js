@@ -12,24 +12,24 @@ const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create(helpers);
+const hbs = exphbs.create({ helpers });
 
-// const sess = {
-//   secret: process.env.SECRET,
-//   cookie: {
-//     maxAge: 300000,
-//     httpOnly: true,
-//     secure: false,
-//     sameSite: 'strict',
-//   },
-//   resave: false,
-//   saveUninitialized: true,
-//   store: new SequelizeStore({
-//     db: sequelize,
-//   }),
-// };
+const sess = {
+  secret: process.env.SECRET,
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
 
-// app.use(session(sess));
+app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

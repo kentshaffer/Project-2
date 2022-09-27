@@ -134,7 +134,7 @@ function submitGoal() {
   // }
   postGoal(goalsArray);
   // postTodo(goalsArray);
-  document.location.replace('login');
+  document.location.replace('/');
 }
 
 // console.log(addNewToDo, deleteToDo, submitGoal);

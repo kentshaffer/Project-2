@@ -69,53 +69,6 @@ const postGoal = async () => {
   }
 };
 
-// const postTodo = async () => {
-//   //do get request of newly created goal to get goal id, then pass into post request of todos for table linkage
-//   // const oneGoal = await Goal.findOne({
-//   //   where: {
-//   //     goal_name: goalsArray[0],
-//   //   }
-//   // });
-//   let todo_list = [];
-//   for (var i = 2; i < goalsArray.length; i++) {
-//     todo_list.push(goalsArray[i]);
-//   }
-//   let goal_id = oneGoal.id;
-//   for (var j = 2; i < goalsArray.length; j++) {
-//     let todo_name = goalsArray[j];
-//     const response = await fetch('/api/todo', {
-//       method: 'POST',
-//       body: JSON.stringify({ todo_name, goal_id }),
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     });
-//     if (!response.ok) {
-//       goalsArray = [];
-//       alert('Failed to create goal');
-//     }
-//   }
-// };
-
-// const postToDo1Table = async () => {
-//   let todo_list = [];
-//   for (var i = 2; i < goalsArray.length; i++) {
-//     todo_list.push(goalsArray[i]);
-//   }
-//   let todo_name = todo_list.toString();
-//   const response = await fetch('/api/todo', {
-//     method: 'POST',
-//     body: JSON.stringify({ todo_name }),
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   });
-//   if (!response.ok) {
-//     goalsArray = [];
-//     alert('Failed to create todos');
-//   }
-// };
-
 function submitGoal() {
   let allGoals = document.querySelectorAll('#goalText');
   // console.log(allGoals.length);

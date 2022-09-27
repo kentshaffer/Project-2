@@ -9,7 +9,7 @@
         <div class='d-grid gap-2 d-md-flex justify-content-between' id='{{id}}'>
           <h2>{{goal_name}} </h2>
           <div>{{#unless goal_open}}✔️{{/unless}}</div>
-          {{#if goal_open}}<input class='btn btn-primary btn-custom' type='submit' value='Complete' />{{/if}}
+          {{#if goal_open}}<input class='btn btn-primary btn-custom' id='complete-goal-btn' type='submit' value='Complete' />{{/if}}
         </div>
       </div>
     </section>

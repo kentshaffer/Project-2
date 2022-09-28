@@ -9,8 +9,8 @@ router.post('/', withAuth, async (req, res) => {
       ...req.body.goal,
       // goal_name: req.body.goal_name,
       // goal_category: req.body.goal_category,
-      // user_id: req.session.user_id,
-      user_id: 1,
+      user_id: req.session.user_id,
+      // user_id: 1,
     });
     console.log('Hello');
     let goal_id = newGoal.id;

@@ -1,5 +1,4 @@
 <html lang='en'>
-
   <head>
     <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
@@ -13,7 +12,6 @@
     <link href='/css/style.css' rel='stylesheet' />
     <title>Goool</title>
   </head>
-
   <body>
     <header>
       <div class='collapse' id='navbarToggleExternalContent'>
@@ -35,10 +33,10 @@
       <nav class='navbar navbar-dark bg-dark custom-header'>
         <div class='container-fluid'>
           <div>
-            <h1 class='text-white h1'>[GOOOL!]</h1>
-            <span class='text-muted'>We'll help you get there</span>
+              <h1 class='text-white h1'>[GOOOL!]</h1>
+              <span class='text-muted'>We'll help you get there</span>
           </div>
-
+          <h2 style="text-align: center; color: white;" id="currentPage"></h2>
           <button
             class='navbar-toggler'
             type='button'
@@ -72,6 +70,11 @@
     ></script>
 
     <script src='/js/login.js'></script>
+    <script src="js/complete-todo.js"></script>
+     <script src="js/complete-goal.js"></script>
+    <script src="js/currentPage.js"></script>
+    <script src="js/progress-bar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@2/tsparticles.preset.confetti.min.js"></script>
 
     <!-- Render script for logged in users only -->
     {{#if logged_in}}

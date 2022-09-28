@@ -4,14 +4,12 @@
       class='d-grid gap-2 d-md-flex justify-content-between'
       id='{{id}}'
     >{{todo_name}}
-      <div>{{#unless todo_open}}✔️{{/unless}}</div>
+      <div class="checkmark">{{#unless todo_open}}✔️{{/unless}}</div>
       {{#if todo_open}}<input
-          class='btn btn-primary btn-custom'
-          id='complete-todo-btn'
+          class='btn btn-primary btn-custom complete-todo-btn'
           type='submit'
           value='Complete'
+          id="todo-btn"
         />{{/if}}</div>
   </div>
 </section>
-
-<script src='js/complete-todo.js'></script>

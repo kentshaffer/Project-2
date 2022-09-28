@@ -1,12 +1,14 @@
 const router = require('express').Router();
 const { Goal, Todo } = require('../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 router.get('/login', (req, res) => {
+  // redners login page
   res.render('login');
 });
 
-router.get('/createGoal', (req, res) => {
+router.get('/createGoal', withAuth, (req, res) => {
+  // renders createGoal page
   try {
     res.render('createGoal');
   } catch (error) {
@@ -14,7 +16,7 @@ router.get('/createGoal', (req, res) => {
   }
 });
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   Goal.findAll().then((goalData) => {
     var goals = goalData.map((goal) => goal.get({ plain: true }));
     res.render('homepage', {
@@ -26,7 +28,7 @@ router.get('/', (req, res) => {
 });
 
 // single goal GET route
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const goalData = await Goal.findByPk(req.params.id, {
       include: [

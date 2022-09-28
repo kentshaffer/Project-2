@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Goal, Todo } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
-//Remember to re add the withAuth helper function to this after testing
-router.post('/', async (req, res) => {
+// Post route for a new goal; includes user authorization
+router.post('/', withAuth, async (req, res) => {
   try {
     const newGoal = await Goal.create({
       ...req.body.goal,
@@ -32,9 +32,11 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   // update a category by its `id` value
-  Goal.update(req.body, {where: {id: req.params.id}}).then(goalData => res.json(goalData)).catch(err => res.json(err));
+  Goal.update(req.body, { where: { id: req.params.id } })
+    .then((goalData) => res.json(goalData))
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;

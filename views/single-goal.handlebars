@@ -22,9 +22,22 @@
     <div class="row">
       <button id="addTd" type="button" class="btn btn-primary col-3" style="margin: 5px;">Add to-do</button>
       <button id="updateTodo" type="button" class="btn btn-primary col-3" style="margin: 5px;">Submit</button>
+      {{#unless goal_open}}
+      <button type="button" class="btn btn-primary col-3" id="confettiContainer" style="margin: 5px;">Celebrate</button>
+      {{/unless}}
     </div>
     <div class="row">
     </div>
   </div>
 </div>
 <script src="js/addTodo.js"></script>
+<script type='module'>
+  import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+  let confettiButton = document.querySelector('#confettiContainer');
+  confettiButton.addEventListener('click', () => {
+    confetti({
+      particleCount: 150,
+      spread: 180
+    });
+  })
+</script>

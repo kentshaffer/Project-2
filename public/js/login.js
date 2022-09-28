@@ -47,7 +47,7 @@ $('#signupbtn2').click(async function (event) {
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

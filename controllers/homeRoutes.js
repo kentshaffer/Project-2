@@ -17,12 +17,15 @@ router.get('/createGoal', withAuth, (req, res) => {
 });
 
 router.get('/', withAuth, (req, res) => {
-  Goal.findAll().then((goalData) => {
+  Goal.findAll({
+    where: {
+      user_id: req.session.user_id,
+    }
+  }).then((goalData) => {
     var goals = goalData.map((goal) => goal.get({ plain: true }));
     res.render('homepage', {
       goals,
-      logged_in: true,
-      // req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   });
 });
@@ -42,7 +45,7 @@ router.get('/:id', withAuth, async (req, res) => {
     //Need to make handlebar page and then put name below in render spot - DONE
     res.render('single-goal', {
       ...goal,
-      // logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
     });
     // res.status(200).json(goalData);
   } catch (err) {

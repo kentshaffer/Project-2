@@ -1,18 +1,30 @@
 <div class='container container-fluid'>
   <div class='flex-row justify-center'>
-  <h1 class="float-end" style="color: white;"></h1><br><br><br>
-  {{!-- <div class="row"></div> --}}
-  {{#each goals as |goal|}}
-    <a href='{{goal.id}}'>
-      <div class='card'>
-        <div class='card-body'>
-          <div
-            class='card-header d-grid gap-2 d-md-flex justify-content-between'
-          >
-            <h3 class='card-title'>{{goal.goal_name}}</h3>
+    <div>
+      <h1 class="float-end" style="color: white;"></h1><br><br><br>
+      <h1>Home Page</h1>
+
+      {{#each goals as |goal|}}
+        <a href='{{goal.id}}'>
+          <div class='card'>
+            <div class='card-body'>
+              <div
+                class='card-header d-grid gap-2 d-md-flex justify-content-between'
+                id='goal-{{id}}'
+              >
+                <h3 class='card-title'>{{goal.goal_name}}</h3>
+                {{#if goal_open}}<input
+                    class='btn btn-primary btn-custom'
+                    type='submit'
+                    value='Complete'
+                  />{{/if}}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </a>
-  {{/each}}
+        </a>
+
+      {{/each}}
+    </div>
+  </div>
+ 
 </div>

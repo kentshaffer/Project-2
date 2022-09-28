@@ -1,4 +1,4 @@
-const { confetti } = require('../../utils/helpers');
+// const { confetti } = require('../../utils/helpers');
 
 let date = new Date();
 let formatDate = date.toISOString();
@@ -19,7 +19,7 @@ const completeGoal = async () => {
     },
   });
   if (response.ok) {
-    confetti;
+    document.location.reload();
   } else {
     alert('Failed to close goal');
   }

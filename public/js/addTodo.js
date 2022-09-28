@@ -9,7 +9,7 @@ function addNewtodo() {
   const textArea = document.createElement('input');
   textArea.setAttribute(
     'class',
-    'd-grid gap-2 d-md-flex justify-content-between'
+    'form-control'
   );
   textArea.setAttribute('id', 'textId');
   cardBody.appendChild(textArea);
@@ -34,10 +34,13 @@ async function updateGoal() {
     body: JSON.stringify({ goal: goal_id, todos: todoArray }),
     headers: { 'Content-Type': 'application/json', },
   });
+  console.log(response);
   if (response.ok) {
-    location.reload();
-  } else{
+    document.location.reload();
+  } else {
     alert('failed to update goal');
   }
+  document.location.reload();
+  console.log('response ok');
 }
 updatebtn.addEventListener('click', updateGoal);

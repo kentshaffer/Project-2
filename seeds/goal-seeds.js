@@ -5,6 +5,7 @@ const goalData = [
     goal_name: 'Read 52 new books this year',
     goal_category: 'books',
     goal_open: true,
+    date_created: '2022-01-01',
     user_id: 1,
   },
   {

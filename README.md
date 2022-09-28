@@ -1,7 +1,7 @@
-# **GOOL!**
+# **¡GOOOL!**
 
 ## Project Description
-GOOL! is a goals creator and tracker designed to streamline managing all of your goals and aspirations. Simply create a goal, add the necessary steps and todos to complete said goal, and come back to the site frequently to track and update your progress. 
+¡GOOOL! is a goals creator and tracker designed to streamline managing all of your goals and aspirations. Simply create a goal, add the necessary steps and todos to complete said goal, and come back to the site frequently to track and update your progress. 
 
 ## Table of Contents:
 [Project Install](#project-install)
@@ -16,7 +16,7 @@ GOOL! is a goals creator and tracker designed to streamline managing all of your
 
 ## Project Install:
 This project is deployed live on Heroku!
-Visit the site at: 
+Visit the site at: [https://secure-shore-30155.herokuapp.com/](https://secure-shore-30155.herokuapp.com/)
 
 
 ## License:

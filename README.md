@@ -12,6 +12,8 @@
 
 [Project Contributors](#project-contributors)
 
+[Project Technologies](#project-technologies)
+
 [Questions](#questions)
 
 ## Project Install:
@@ -32,6 +34,8 @@ To use this project, first create an account and login. Once active, navigate th
 - Eleanor Gold @ GitHub: (https://github.com/aurumbright)
 - Kent Shaffer @ GitHub: (https://github.com/kentshaffer)
 
+## Project Technologies:
+This project was created with a node Express back end and a Handlebars template engine front end. MySQL with Sequelize was used to create and update the database. NPM packages Luxon, canvas-confetti, dotenv, eslint, and prettier were all used to add various functions throughout the project. 
 
 ## Questions:
 GitHub Repository: (https://github.com/kentshaffer/Project-2)

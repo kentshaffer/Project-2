@@ -60,3 +60,7 @@ main {
   max-width: fit-content;
   background-color: var(--primary);
 }
+
+#confettiContainer {
+  width: auto;
+}

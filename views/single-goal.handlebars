@@ -8,7 +8,7 @@
       <div class='card-body'>
         <div class='d-grid gap-2 d-md-flex justify-content-between' id='{{id}}'>
           <h2>{{goal_name}} </h2>
-          <div>{{#unless goal_open}}✔️{{/unless}}</div>
+          <div>{{#unless goal_open}}<button type="button" class="btn btn-primary col-3" id="confettiContainer" style="margin: 5px; background-color: rgb(12, 206, 12);">Celebrate!</button>{{/unless}}</div>
           {{#if goal_open}}<input class='btn btn-primary btn-custom' id='complete-goal-btn' type='submit' value='Complete' />{{/if}}
         </div>
       </div>
@@ -20,11 +20,13 @@
     
   </div>
     <div class="row">
+      {{#if goal_open}}
       <button id="addTd" type="button" class="btn btn-primary col-3" style="margin: 5px;">Add to-do</button>
       <button id="updateTodo" type="button" class="btn btn-primary col-3" style="margin: 5px;">Submit</button>
-      {{#unless goal_open}}
+      {{/if}}
+      {{!-- {{#unless goal_open}}
       <button type="button" class="btn btn-primary col-3" id="confettiContainer" style="margin: 5px;">Celebrate</button>
-      {{/unless}}
+      {{/unless}} --}}
     </div>
     <div class="row">
     </div>

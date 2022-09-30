@@ -1,5 +1,4 @@
 const { DateTime } = require('luxon');
-// const tsparticles = require('tsparticles-engine');
 
 module.exports = {
   diffDate: (dateCreated) => {
@@ -10,11 +9,4 @@ module.exports = {
     let round = Math.round(convert);
     return round;
   },
-  // confetti: (async () => {
-  //   await loadConfettiPreset(tsparticles); // this is required only if you are not using the bundle script
-
-  //   await tsparticles.load('tsparticles', {
-  //     preset: 'confetti',
-  //   });
-  // })()
 };

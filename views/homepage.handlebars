@@ -1,8 +1,7 @@
 <div class='container container-fluid'>
   <div class='flex-row justify-center' style='margin-top: 7rem;'>
     <div>
-      <h1 class="float-end" style="color: white;"></h1><br><br><br>
-      
+      <h1 class='float-end' style='color: white;'></h1><br /><br /><br />
 
       {{#each goals as |goal|}}
         <a href='{{goal.id}}'>
@@ -16,7 +15,7 @@
                 {{#if goal_open}}<input
                     class='btn btn-primary btn-custom'
                     type='submit'
-                    value='Complete'
+                    value='View Goal'
                   />{{/if}}
               </div>
             </div>
@@ -26,5 +25,5 @@
       {{/each}}
     </div>
   </div>
- 
+
 </div>
